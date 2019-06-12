@@ -3,14 +3,56 @@
   %head
     
   %body
-    #flash-box
-    #wrapper
-    #chat-side
-    #side-header
-      #side-header__box
-        %p#side-header__box__user-name ユーザーネーム
-        %ul#side-header__box__menu
-          %li#side-header__box__menu__new-group
-            %a"/groups/new"
-              %i#fafa-edit
-    #groups
+    .flash-box
+    .wrapper
+      .chat-side
+        .side-header
+          .side-header__box
+            %p.side-header__box__user-name
+              ユーザーネーム
+            %ul.side-header__box__menu
+              %li.side-header__box__menu__new-group
+                %a{href: '/groups/new'}
+                  %i.fafa-edit
+              %li.side-header__box__menu__edit-user
+                %a{href: '/users/689/edit'}
+                %i.fafa-cog
+        .groups
+          .group
+            %p.group__group-nam
+              グループ名
+            %p.group__latest-message
+              まだメッセージがありません
+      .chat-main
+        .main-header
+          .main-header__left-box
+            %h2.main-header__left-box__current-group{id: '1349'}
+              グループ
+            %ul.main-header__left-box__member-list
+              Member：
+              %li.main-header__left-box__member-list__member
+                田中
+                %a{href: '/groups/1349/edit'} 
+            .main-header__edit-btn
+              Edit
+        .messages
+          .message
+            .message__upper-info
+              %p.message__upper-info__talker
+                aaaaaaaaaaaaa
+              %p.message__upper-info__date
+                2019/06/04(Tue) 19:29:17
+            %p.message__text
+              koou
+-#         .form
+-# %form.new_message#new_message{enctype: "multipart/form-data",action: "/groups/1349/messages", accept: {charset: "UTF-8"}, method: "post"
+-# %input{name: "utf8", type: "hidden", value: "✓"}
+-# <input type="hidden" name="authenticity_token" value="qI1h/17bbySdBTHL/VkUiHahL1HXxvfcR0WCC3eLqD9TpLXG/jQbPYRAwzEpTDzELqZvxtCseDr83HZ7bXmifQ==">
+-# <div class="input-box">
+-# <input placeholder="type a message" class="input-box__text" type="text" name="message[content]" id="message_content">
+-# <label class="input-box__image" for="message_image"><i class="fa fa-image"></i>
+-# <input class="input-box__image__file" type="file" name="message[image]" id="message_image">
+-# </label></div>
+-# <input type="submit" name="commit" value="Send" class="submit-btn" data-disable-with="Send">
+-# </form></div>
+-# </div>
